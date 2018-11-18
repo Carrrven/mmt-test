@@ -1,25 +1,22 @@
 <?php
    // connect to mongodb
    $m = new MongoClient();
-   echo "Connection to database successfully<br><hr>";
+   echo "Connection to database successfully";
 
    // select a database
    $db = $m->mydb;
-   echo "Database mydb selected<br><hr>";
+   echo "Database mydb selected";
    $collection = $db->mycol;
-   echo "Collection selected succsessfully<br><hr>";
+   echo "Collection selected succsessfully";
 
-   // now remove the document
-   $collection->remove(array("title"=>"Carrrven"), array("justOne" => true));
-   echo "Documents deleted successfully<br><hr>";
+   $document = array(
+      "title" => "MBB",
+      "description" => "MBB site",
+      "likes" => 03,
+      "url" => "https://mbb.bucha.org/",
+      "by" => "Carrrven"
+   );
 
-   // now display the available documents
-   $cursor = $collection->find();
-
-   // iterate cursor to display title of documents
-   echo "Updated document<br><hr>";
-
-   foreach ($cursor as $document) {
-      echo $document["title"] . "\n";
-   }
+   $collection->insert($document);
+   echo "Document inserted successfully";
 ?>
