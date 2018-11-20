@@ -11,8 +11,10 @@
   echo "Collection selected succsessfully<br><hr>";
 
   $cursor = $collection->find();
+  $filter=array("title"=> "MBB");
 
-
+$curs = $collection->findOne($filter);
+echo "<p style='color: red;'>".$curs["url"] . "</p><hr>\n";
   foreach ($cursor as $document) {
      echo $document["_id"] . "<br><hr>\n";
      echo $document["title"] . "<br><hr>\n";

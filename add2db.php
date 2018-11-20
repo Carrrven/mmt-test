@@ -11,9 +11,9 @@
 
    $document = array(
       "title" => "MBB",
-      "description" => "MBB site",
-      "likes" => 03,
-      "url" => "https://mbb.bucha.org/",
+      "description" => "MBB do4ka",
+      "likes" => 43,
+      "url" => "https://do4ka.mbb.bucha.org/",
       "by" => "Carrrven"
    );
 
